@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    1、php的高级分离
+    <p <?php if(2>1): ?> style="background:#999;" <?php endif; ?> >这是测试</p>  这种情况一般很少用，都用smarty类似框架解析，不在html中出现php代码
+    2、变量的增、删、改、查
+    $a=2; //增
+    unset($a);//删
+    $a=3;//改
+    $a;
+    3、haerder("Content-Type:text/html;charset=utf-8");设置文档编码
+    4、php中存在很多不需要用户脚本来定义就可以直接使用的变量，称之为预定义变量。$_POST,$_GET,$_REQUEST,$_SERVER,$_FIELS,$_SESSION,$_COOKIE,$_ENV,$GLOBALS
+    5、数据类型 4+2+2 
+        string,integer,boolean,flaot
+        array,object,
+        resource,null;  检测数据类型var_dump(var)
+        ①error_reporting(0); //禁止显示PHP警告提示
+        ②字符串类型：可以用{}
+        <?php
+            $a="p";
+            $b="m";
+            echo "i like {$b}hp and {$b}ysql";
+        ?>
+    6、常量
+    7、类和对象
+        7-1 class 定义， 里面的方法通常多一个关键字
+            public：公开的
+            protected：受保护的
+            private：私有的
+        默认都为public，外部可以访问。一般通过->对象操作符来访问对象的属性或者方法，对于静态属性则使用::双冒号进行访问。当在类成员方法内部调用的时候，可以使用$this伪变量调用当前对象的属性。
+        class Car{
+            public $name="汽车";
+        }
+        $aodi=new Car();
+        echo $aodi->name;
+        7-2 class中只能出现静态属性，静态方法，非静态属性，非静态方法，和类常量5个写法
+            而且$this对象只能用在对象访问非静态方法中出现。
+
+        
+
+</body>
+</html>
